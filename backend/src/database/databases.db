@@ -1,0 +1,22 @@
+CREATE DATABASE IF NOT EXISTS hackaton;
+
+USE hackaton;
+
+CREATE TABLE IF NOT EXISTS administradores(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    rol VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE IF NOT EXISTS permisos(
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    tipotrabajo VARCHAR(100) NOT NULL,
+    duraciontrabajo INT NOT NULL,
+    riesgotrabajo VARCHAR(100) NOT NULL,
+    file TEXT,
+    urgencia VARCHAR(100) NOT NULL,
+    estatus VARCHAR(100) ,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
